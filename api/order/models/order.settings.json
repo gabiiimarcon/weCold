@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "orders",
+  "info": {
+    "name": "Order",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "value": {
+      "type": "decimal",
+      "unique": true
+    },
+    "complements": {
+      "collection": "complements",
+      "via": "orders"
+    },
+    "containers": {
+      "collection": "container",
+      "via": "orders"
+    },
+    "products": {
+      "collection": "products",
+      "via": "orders",
+      "dominant": true
+    }
+  }
+}

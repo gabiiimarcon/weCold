@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "complements",
+  "info": {
+    "name": "Complement",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "unique": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "unit": {
+      "type": "enumeration",
+      "enum": [
+        "unit",
+        "g"
+      ]
+    },
+    "orders": {
+      "via": "complements",
+      "collection": "order",
+      "dominant": true
+    }
+  }
+}
